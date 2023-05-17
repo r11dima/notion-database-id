@@ -1,8 +1,5 @@
 const { Client } = require('@notionhq/client');
 
-options:
-    -e NOTION_API_KEY=${{ secrets.NOTION_API_KEY }}
-
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
 (async () => {
