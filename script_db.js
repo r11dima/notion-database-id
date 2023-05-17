@@ -1,6 +1,6 @@
 const { Client } = require('@notionhq/client');
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
+const notion = new Client({ auth: process.secrets.NOTION_API_KEY });
 
 (async () => {
   const response = await notion.search({
