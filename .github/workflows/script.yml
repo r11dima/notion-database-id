@@ -1,23 +1,12 @@
-name: Execute Script
-
-on:
-  workflow_dispatch:  # Manually trigger the workflow
+name: Run Script
+on: [push]
 
 jobs:
-  execute:
+  run-script:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Execute script
+      - name: Run Script
         run: node script_db.js
