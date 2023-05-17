@@ -1,8 +1,7 @@
 name: Execute Script
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run the script every day at midnight UTC
+  workflow_dispatch:  # Manually trigger the workflow
 
 jobs:
   execute:
@@ -21,4 +20,4 @@ jobs:
         run: npm install
 
       - name: Execute script
-        run: node get-database-id.js
+        run: script_db.js
